@@ -1,7 +1,7 @@
 {
   "name": "storybook-web",
   "version": "0.1.1",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "https://github.com/Hieu28996/storybook-web.git",
@@ -78,5 +78,6 @@
     "cross-env": "^7.0.3",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
-  }
+  },
+  "author": "Hieu_히에우 <hieu28996@gmail.com>"
 }
