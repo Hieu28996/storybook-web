@@ -1,9 +1,8 @@
 {
   "name": "storybook-web",
   "version": "0.1.1",
-  "private": true,
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/Hieu28996/storybook-web.git",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -17,11 +16,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "cross-env BABEL_ENV=production babel src -d src",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "release": "auto shipit --base-branch=main"
   },
   "babel": {
     "presets": [
