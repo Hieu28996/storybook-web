@@ -1,0 +1,159 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Button } from './Button';
+
+export const headerStyle = {
+    marginTop: '35px', 
+    marginBottom: '20px',
+    color: '#fff'
+};
+
+export const showcaseBoxStyle = {
+    display: 'flex', 
+    alignItems: 'center', 
+    marginTop: '10px', 
+    marginBottom: '20px'
+}
+
+export const Template = (args) => <Button {...args} />;
+
+export const TemplateShowcase = (args) => (
+    <>
+        <h2 style={headerStyle}>Small</h2>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='small' color='primary' iconType='none' isSpace={false} />
+            <Button content='Button' size='small' color='primary' iconType='none' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='small' color='primary' iconType='reset' isDisabled={false} />
+            <Button content='Button' size='small' color='primary' iconType='reset' isDisabled={true} />
+        </div>
+        <h2 style={headerStyle}>Medium</h2>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='medium' color='primary' iconType='none' isSpace={false} />
+            <Button content='Button' size='medium' color='primary' iconType='none' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='medium' color='primary' iconType='reset' isDisabled={false} />
+            <Button content='Button' size='medium' color='primary' iconType='reset' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='medium' color='secondary' iconType='none' isDisabled={false} />
+            <Button content='Button' size='medium' color='secondary' iconType='none' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='medium' color='secondary' iconType='reset' isDisabled={false} />
+            <Button content='Button' size='medium' color='secondary' iconType='reset' isDisabled={true} />
+        </div>
+        <h2 style={headerStyle}>Large</h2>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='large' color='primary' iconType='none' isSpace={false} />
+            <Button content='Button' size='large' color='primary' iconType='none' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='large' color='primary' iconType='reset' isDisabled={false} />
+            <Button content='Button' size='large' color='primary' iconType='reset' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='large' color='secondary' iconType='none' isDisabled={false} />
+            <Button content='Button' size='large' color='secondary' iconType='none' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Button content='Button' size='large' color='secondary' iconType='reset' isDisabled={false} />
+            <Button content='Button' size='large' color='secondary' iconType='reset' isDisabled={true} />
+        </div>
+    </>
+)
+
+export const ButtonArgTypes = {
+    content: {
+        control: {
+            type: 'text'
+        }
+    },
+    size: {
+        options: ['small', 'medium', 'large'],
+        control: {
+            type: 'select',
+        }
+    },
+    color: {
+        options: ['primary', 'secondary'],
+        control: {
+            type: 'select',
+        }
+    },
+    isSpace: {
+        control: {
+            type: 'boolean'
+        }
+    },
+    isDisabled: {
+        control: {
+            type: 'boolean'
+        }
+    },
+    isReverse: {
+        control: {
+            type: 'boolean'
+        }
+    }
+};
+
+<Meta
+    title="Components/Button"
+    component={Button}
+    argTypes={{...ButtonArgTypes}}
+/>
+
+# Button
+
+## Props
+
+<ArgsTable story={PRIMARY_STORY} />
+
+## Variations
+
+### Default
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            content: 'Button',
+            size: 'small',
+            color: 'primary',
+            iconType: 'none',
+            isSpace: false,
+            isDisabled: false,
+            isReverse: false
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Disabled"
+        args={{
+            content: 'Button',
+            size: 'small',
+            color: 'primary',
+            isSpace: false,
+            isDisabled: true,
+            isReverse: false
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Showcase
+
+<Canvas>
+    <Story
+        name="Showcase"
+    >
+        {TemplateShowcase.bind({})}
+    </Story>
+</Canvas>

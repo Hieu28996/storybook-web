@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { PortalLayout } from './Layout';
+
+export const Template = (args) => <PortalLayout {...args} />;
+
+<Meta
+    title="Pages/Layout"
+    component={PortalLayout}
+/>
+
+# Layout
+
+<ArgsTable story={PRIMARY_STORY} />
+
+<Canvas>
+    <Story
+        name="Layout Empty"
+        parameters={{
+            layout: 'fullscreen'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

@@ -1,0 +1,138 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Text } from './Text';
+
+export const headerStyle = {
+    fontFamily: 'Sofia Pro',
+    fontWeight: '900',
+    fontSize: '20px',
+    lineHeight: '30px',
+    textTransform: 'uppercase',
+    color: '#00D1FF',
+};
+
+export const Template = (args) => <Text {...args} />;
+
+export const HeadLineTemplate = (args) => (
+    <>
+        <h2 style={headerStyle}>Headline1</h2>
+        <Text content="Qualy" font="Qualy" size={50} lineHeight={64} weight="regular" color="#fff" />
+        <h2 style={headerStyle}>Headline2</h2>
+        <Text content="Qualy" font="Qualy" size={42} lineHeight={53} weight="regular" color="#fff" />
+    </>
+)
+
+export const TitleTemplate = (args) => (
+    <>
+        <h2 style={headerStyle}>Title1</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={30} lineHeight={30} weight="medium" color="#fff" />
+        <h2 style={headerStyle}>Title2</h2>
+        <Text content="Qualy" font="Qualy" size={22} lineHeight={28} weight="regular" color="#fff" />
+        <h2 style={headerStyle}>Title3</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={22} lineHeight={22} weight="black" color="#fff" />
+    </>
+)
+
+export const BodyTemplate = (args) => (
+    <>
+        <h2 style={headerStyle}>Body1</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={20} lineHeight={24} weight="light" color="#fff" />
+        <h2 style={headerStyle}>Body2</h2>
+        <Text content="Qualy" font="Qualy" size={18} lineHeight={23} weight="regular" color="#fff" />
+        <h2 style={headerStyle}>Body3</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={18} lineHeight={18} weight="medium" color="#fff" />
+        <h2 style={headerStyle}>Body4</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={17} lineHeight={17} weight="black" color="#fff" />
+        <h2 style={headerStyle}>Body5</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={16} lineHeight={16} weight="black" color="#fff" />
+        <h2 style={headerStyle}>Body6</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={15} lineHeight={15} weight="medium" color="#fff" />
+        <h2 style={headerStyle}>Body7</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={14} lineHeight={14} weight="medium" color="#fff" />
+        <h2 style={headerStyle}>Body8</h2>
+        <Text content="Sofia Pro" font="Sofia Pro" size={12} lineHeight={12} weight="light" color="#fff" />
+    </>
+)
+
+export const TextArgTypes = {
+    text: {
+        control: {
+            type: 'text'
+        }
+    },
+    weight: {
+        options: ['medium', 'regular', 'black', 'light'],
+        control: {
+            type: 'select',
+        }
+    },
+    font: {
+        options: ['Qualy', 'Sofia Pro'],
+        control: {
+            type: 'select',
+        }
+    },
+    color: {
+        control: {
+            type: 'text',
+        }
+    }
+};
+
+<Meta
+    title="Components/Text"
+    component={Text}
+    argTypes={{...TextArgTypes}}
+/>
+
+# Text
+
+## Props
+
+<ArgsTable story={PRIMARY_STORY} />
+
+## Variations
+
+### Default
+
+<Canvas>
+    <Story
+        name="Default"
+        args= {{
+            as: 'h1',
+            content: "Qualy",
+            font: "Qualy",
+            size: 50,
+            lineHeight: 64,
+            weight: "regular",
+            color: "#fff"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Showcase
+
+<Canvas>
+    <Story
+        name="Headline"
+    >
+        {HeadLineTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Title"
+    >
+        {TitleTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Body"
+    >
+        {BodyTemplate.bind({})}
+    </Story>
+</Canvas>

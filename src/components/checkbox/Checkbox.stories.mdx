@@ -1,0 +1,126 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Checkbox } from './Checkbox';
+
+export const headerStyle = {
+    marginTop: '35px', 
+    marginBottom: '20px',
+    color: '#fff'
+};
+
+export const showcaseBoxStyle = {
+    display: 'flex', 
+    alignItems: 'center', 
+    marginTop: '10px', 
+    marginBottom: '20px'
+}
+
+export const Template = (args) => <Checkbox {...args} />;
+
+export const TemplateShowcase = (args) => (
+    <>
+        <h2 style={headerStyle}>Checkbox default</h2>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox1' name='checkbox' value='Check box' iconType='none' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox2' name='checkbox' value='Check box' iconType='none' isChecked={true} />
+            <Checkbox id='checkbox3' name='checkbox' value='Check box' iconType='none' isDisabled={true} />
+        </div>
+        <h2 style={headerStyle}>Checkbox Icon</h2>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox16' name='checkbox' value='Check box' iconType='common' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox17' name='checkbox' value='Check box' iconType='common' isChecked={true} />
+            <Checkbox id='checkbox18' name='checkbox' value='Check box' iconType='common' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox4' name='checkbox' value='Check box' iconType='rare' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox5' name='checkbox' value='Check box' iconType='rare' isChecked={true} />
+            <Checkbox id='checkbox6' name='checkbox' value='Check box' iconType='rare' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox7' name='checkbox' value='Check box' iconType='epic' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox8' name='checkbox' value='Check box' iconType='epic' isChecked={true} />
+            <Checkbox id='checkbox9' name='checkbox' value='Check box' iconType='epic' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox10' name='checkbox' value='Check box' iconType='legendary' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox11' name='checkbox' value='Check box' iconType='legendary' isChecked={true} />
+            <Checkbox id='checkbox12' name='checkbox' value='Check box' iconType='legendary' isDisabled={true} />
+        </div>
+        <div style={showcaseBoxStyle}>
+            <Checkbox id='checkbox13' name='checkbox' value='Check box' iconType='ancient' isChecked={false} isDisabled={false} />
+            <Checkbox id='checkbox14' name='checkbox' value='Check box' iconType='ancient' isChecked={true} />
+            <Checkbox id='checkbox15' name='checkbox' value='Check box' iconType='ancient' isDisabled={true} />
+        </div>
+    </>
+)
+
+<Meta
+    title="Components/Checkbox"
+    component={Checkbox}
+/>
+
+# Checkbox
+
+## Props
+
+<ArgsTable story={PRIMARY_STORY} />
+
+## Variations
+
+### Default
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            id: 'checkbox',
+            name: 'checkbox',
+            value: 'Check box',
+            iconType: 'none',
+            isChecked: false,
+            isDisabled: false
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Checked"
+        args={{
+            id: 'checkbox',
+            name: 'checkbox',
+            value: 'Check box',
+            iconType: 'none',
+            isChecked: true,
+            isDisabled: false
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Disable"
+        args={{
+            id: 'checkbox',
+            name: 'checkbox',
+            value: 'Check box',
+            iconType: 'none',
+            isDisabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Default
+
+<Canvas>
+    <Story
+        name="Showcase"
+    >
+        {TemplateShowcase.bind({})}
+    </Story>
+</Canvas>
